@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    font-family: monospace;
+}
+
+nav.navBar{
+    background-color: #084E2F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem; 
+}
+
+.navBar ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navBar a{
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.logoNavBar{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navBar li:hover{
+    color: #FF7BAC;
+}
+
+.navBar li.active{
+    color: #FF7BAC;
+}
