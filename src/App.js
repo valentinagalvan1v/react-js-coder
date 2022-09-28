@@ -2,13 +2,13 @@ import { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar.js';
 import Tienda from './components/Tienda';
-import Contacto from './Contacto';
-import Home from './Home';
-import Proceso from './Proceso';
+import Contacto from './components/Contacto';
+import Home from './components/Home';
+import Proceso from './components/Proceso';
+
 
 
 function App() {
-  let component
   switch (window.location.pathname) {
     case "/":
       Component = Home

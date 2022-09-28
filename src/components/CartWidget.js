@@ -1,9 +1,7 @@
 import React from "react";
 
-export default function CartWidget (props){
-    return(
-        <div>
-            Hola {props.name}
-        </div>
+export default function CartWidget() {
+    return (
+        <img src="img/carritoSvg.svg" className="CartWidget" />
     )
 }

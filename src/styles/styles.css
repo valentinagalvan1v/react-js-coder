@@ -14,7 +14,7 @@ nav.navBar{
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 0 2rem; 
+    padding: 10px 2rem; 
 }
 
 .navBar ul{
@@ -42,4 +42,13 @@ nav.navBar{
 
 .navBar li.active{
     color: #FF7BAC;
+}
+
+.CartWidget{
+    width: 20px;
+}
+
+.ItemListContainer h2{
+    color:#FF7BAC;
+    margin-top: 100px;
 }
