@@ -1,48 +1,49 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList'
-import { products } from '../../Products'
+import ItemListDestacado from './ItemListDestacado';
+import BarLoader from "react-spinners/BarLoader";
+import { collection, getDocs } from 'firebase/firestore';
+import { database } from '../../../services/firebaseConfig';
 
-const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
-  
-  useEffect(() => {
+const ItemListContainer = (props) => {
+    const [items, setItems] = useState([]);
+    const [loader, setLoader] = useState(true);
 
-    // sin promesa
-    // setTimeout(() => {
-    //     setItems(products)
-    // },2000)
+    useEffect(() => {
+        const prodCollection = collection(database, 'products')
+        getDocs(prodCollection)
+            .then((res) => {
+                const products = res.docs.map((prod) => {
+                    return {
+                        id: prod.id,
+                        ...prod.data(),
+                    }
+                })
+                setItems(products);
+            })
+            .catch((error) => {
+            })
+            .finally(() => {
+                setLoader(false);
+            });
+        return () => setLoader(true);
+    }, []);
 
-    const traerProductos = () => {
+    if (loader === true) {
+        return <div className='Loader'>
+            <BarLoader />
+        </div>
+    }
 
-        return new Promise((response, reject) => {
-            setTimeout(() => {
-                response(products)
-            }, 1000);
+    return (
+        <div className="itemListContainer">
+            {props.page === 'home' && <ItemListDestacado items={items} />}
+            {props.page === 'tienda' && <ItemList items={items} />}
+        </div>
+    )
 
-        });
-
-    };
-
-
-    traerProductos()
-        .then((response) => {
-            setItems(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-
-  }, []);
-
-
-  return (
-      <div className="itemListContainer">
-          <ItemList items={items} />
-      </div>
-  );
 };
 
 export default ItemListContainer;
-
 
 

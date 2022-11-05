@@ -2,11 +2,12 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 import CartWidget from "./CartWidget.js";
 
-
 export default function NavBar() {
     return (
         <nav className="navBar">
-            <NavLink  to="/" className="logoNavBar" >OMJ</NavLink>
+            <NavLink  to="/" className="logoNavBar" >
+                <img src="/img/iso-omj.svg" alt="" />
+            </NavLink>
             <ul>
                 <NavLink to="/tienda" >TIENDA</NavLink>
                 <NavLink to="/proceso" >PROCESO</NavLink>

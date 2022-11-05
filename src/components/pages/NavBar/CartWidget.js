@@ -1,13 +1,19 @@
 import React from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ContextCart } from "../../../contexts/ContextCart";
 
 export default function CartWidget() {
+    const { totalUnits } = useContext(ContextCart)
+
     return (
         <>
             <div>
-                <img src="img/carritoSvg.svg" className="CartWidget" />
-                <p className="CantidadCarrito">1</p>
+                <Link to='/cart'>
+                    <img src="img/carrito.svg" className="CartWidget" alt="" />
+                    {totalUnits() === 0 ? null : <p className="CantidadCarrito">{totalUnits()}</p>}
+                </Link>
             </div>
         </>
-
     )
 }

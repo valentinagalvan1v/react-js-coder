@@ -5,17 +5,18 @@ import { useParams } from 'react-router-dom';
 const ItemList = ({ items }) => {
 
     const { category } = useParams();
-
     return (
         <div className="ItemList">
-            {items.map(item => {
+            {items.map((item) => {
+                let component
                 if (category === undefined) {
-                    return <Item prod={item} key={item.id} />;
+                    component =  <Item prod={item} key={item.id} />;
                 } else {
                     if (category === item.category) {
-                        return <Item prod={item} key={item.id} />;
+                        component = <Item prod={item} key={item.id} />;
                     }
                 }
+                return component
             })}
         </div>
     );

@@ -9,7 +9,7 @@ export default function Tienda() {
         <>
             <div className="Tienda">
                 <NavTienda />
-                <ItemListContainer />
+                <ItemListContainer page={'tienda'}/>
                 <Footer />
             </div>
         </>

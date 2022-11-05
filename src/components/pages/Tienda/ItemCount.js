@@ -1,31 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const ItemCount = (props) => {
-    const [count, setCount] = useState(props.initial);
+const ItemCount = ({ initial, stock, addProdToCart }) => {
 
+    const [count, setCount] = useState(initial);
 
     const add = () => {
-        count < props.stock && setCount(count + 1);
+        count < stock && setCount(count + 1);
+    };
+    const substract = () => {
+        count > initial && setCount(count - 1);
     };
 
-    const substract = () => {
-        count > props.initial && setCount(count - 1);
-    };
+    useEffect(() => {
+        setCount(initial);
+    }, [initial]);
 
     return (
         <div className='countContainer'>
             <div className='countBtn'>
-                <button disabled={count === props.stock} onClick={add}>
-                    +
+                <button disabled={count === stock} onClick={add}>
+                    <img src="/img/plus.svg" alt="" />
                 </button>
                 <p>
                     {count}
                 </p>
-                <button disabled={count === props.initial} onClick={substract}>
-                    -
+                <button disabled={count === initial} onClick={substract}>
+                    <img src="/img/minus.svg" alt="" />
                 </button>
             </div>
-            <button className='addToCart'>
+            <button onClick={() => { addProdToCart(count) }} className='addToCart'>
                 Agregar al carrito
             </button>
         </div>

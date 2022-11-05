@@ -7,14 +7,22 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
+/*COLORES*/
+:root {
+    --rojo: #f62e26;
+    --verde: #084e2f;
+}
+
 /*NAVBAR*/
 
+
+
 nav.navBar {
-    background-color: #084E2F;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 2rem;
+    border-bottom: var(--rojo) 2px solid;
 }
 
 .navBar ul {
@@ -26,38 +34,38 @@ nav.navBar {
 }
 
 .navBar a {
-    color: white;
+    color: var(--verde);
     text-decoration: none;
     font-size: 20px;
     font-style: italic;
     font-weight: 300;
 }
 
-.logoNavBar {
-    font-size: 20px;
-    text-decoration: none;
-}
-
 .navBar a:hover {
-    color: #FF7BAC;
+    color: var(--rojo);
 }
 
-.active {
-    color: #FF7BAC !important;
+.navBar a.active {
+    color: var(--rojo) !important;
+}
+
+.logoNavBar {
+    width: 30px;
+    height: 30px;
 }
 
 .CartWidget {
-    width: 20px;
+    width: 25px;
     right: 2rem;
 }
 
 .CantidadCarrito {
     position: absolute;
-    background-color: #FF7BAC;
+    background-color: var(--rojo);
     color: white;
     padding: 5px;
     border-radius: 50px;
-    font-weight: bolder;
+    font-weight: 800;
     right: 15px;
     top: 5px;
     font-size: 10px;
@@ -66,7 +74,7 @@ nav.navBar {
 /*ITEMLISTCONTAINER*/
 
 .ItemListContainer h2 {
-    color: #FF7BAC;
+    color: var(--verde);
     margin-top: 100px;
 }
 
@@ -74,14 +82,13 @@ nav.navBar {
 
 .countContainer {
     margin-top: 15px;
-    padding: 20px;
-    background-color:#084E2F;
+    background-color: var(--rojo);
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     color: black;
-    border: #FF7BAC 2px solid;
+    border-top: var(--verde) 2px solid;
 }
 
 .countBtn {
@@ -91,12 +98,17 @@ nav.navBar {
     padding: 5px;
 }
 
+.countBtn p{
+    padding-top: 12px;
+    font-size: 20px;
+}
+
 .countBtn button {
     border-radius: 10px;
     padding: 5px;
-    width: 20px;
+    width: 50px;
     border-width: 0px;
-    color: #FF7BAC;
+    color: var(--verde);
     background-color: none;
     font-size: 25px;
     cursor: pointer;
@@ -108,10 +120,139 @@ button:disabled {
 }
 
 .countContainer .addToCart {
-    background-color: #084E2F;
+    background-color: var(--verde);
     color: white;
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
+}
+
+/*HOME*/
+
+.Home {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 100px;
+}
+
+.Home .Portada img {
+    width: 100%;
+
+}
+
+.Portada {
+    margin-top: 50px;
+}
+
+.Portada .TextRight h1 {
+    margin: 0px;
+    font-size: 180px;
+}
+
+.Portada .TextRight {
+    gap: 5%;
+}
+
+.TextPortada {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.OverTitle {
+    z-index: 2;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 110px;
+}
+
+.ProductosDestacados {
+    border-top: var(--rojo) solid 2px;
+    margin: 10px;
+    height: fit-content;
+}
+
+.ProductosDestacados .ItemList {
+    padding: 0px;
+}
+
+.NavBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NavBlock h2 {
+    color: var(--rojo);
+    font-weight: 100;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.NavBlock a {
+    color: var(--rojo);
+    font-weight: 100;
+    padding: 0px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--verde);
+}
+
+.NavBlock a:hover {
+    color: var(--rojo);
+}
+
+.ItemListDestacado {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+    padding: 0px;
+    row-gap: 100px;
+}
+
+.ItemListDestacado img {
+    width: 100%;
+}
+
+.ProcesoHome {
+    border-top: var(--rojo) solid 2px;
+    margin: 10px;
+    height: fit-content;
+}
+
+.ProcesoHome p{
+    padding-left: 50px;
+}
+
+.ProcesoHome h1{
+    text-align: left;
+}
+
+.Home h1 {
+    font-size: 200px;
+    color: var(--verde);
+    margin: 100px 0px 100px 0px;
+}
+
+.TextRight {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: left;
+    margin: 0px 30px 0px 30px;
+}
+
+.TextRight p {
+    margin: 0;
+    font-size: 30px;
 }
 
 /*TIENDA*/
@@ -119,26 +260,40 @@ button:disabled {
 /*NAVTIENDA*/
 
 .NavTienda {
-    margin-top: 50px;
+    margin-top: 5px;
     padding: 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    border-bottom: var(--rojo) 2px solid;
 }
 
 .NavTienda a {
     background-color: none;
     border-width: 0px;
-    color: #FF7BAC;
+    color: var(--verde);
     font-weight: 300;
     text-decoration: none;
     cursor: pointer;
 }
 
 .NavTienda a:hover {
-    color: #084E2F;
+    color: var(--rojo);
 }
+
+.NavTienda a.active {
+    color: var(--rojo);
+}
+
+button img{
+    padding: 7px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /*ItemListContainer*/
 
@@ -160,10 +315,12 @@ button:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: var(--rojo) 2px solid;
+    padding: 20px;
 }
 
 .ItemBlock button {
-    color: #FF7BAC;
+    color: var(--rojo);
     border-width: 0px;
     border-radius: 50px;
     width: 50px;
@@ -175,6 +332,7 @@ button:disabled {
     transform: rotate(-180deg);
     transition: ease-in-out;
     transition-duration: 0.2s;
+    background-color: white;
 }
 
 .ItemBlock button:hover {
@@ -184,14 +342,11 @@ button:disabled {
 }
 
 .ModalBackground {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    bottom: 0;
+    right: 0;
     z-index: 10;
     background: black;
     opacity: .5;
@@ -199,25 +354,174 @@ button:disabled {
 }
 
 .Modal {
-    background-color: #084E2F;
+    background-color: var(--rojo);
     color: white;
     z-index: 10;
     width: 500px;
-    height: 350px;
+    height: fit-content;
     padding: 30px;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     position: fixed;
     border-radius: 20px;
+
 }
 
 .Modal button {
-    background-color: #084E2F;
+    background-color: var(--rojo);
     border-width: 0px;
-    color: #FF7BAC;
+    color: var(--verde);
     font-size: 20px;
     cursor: pointer;
+}
+
+.ModalBtnX{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    width: 50px;
+}
+
+
+.Modal a {
+    text-decoration: none;
+    color:white;
+    border: white 2px solid;
+    padding: 10px;
+    background-color:var(--rojo);
+}
+
+.Modal a:hover {
+    color: white;
+    background-color: var(--rojo);
+}
+
+.CounterAndLink{
+    display: flex;
+    flex-direction: column;
+}
+
+.CounterAndLink a{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.CounterAndLink a:hover{
+    color: var(--rojo);
+    background-color: white;
+}
+.InfoModal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.InfoModal h2 {
+    margin: 0;
+}
+
+.InfoModal h3 {
+    font-weight: 200;
+    margin: 0;
+}
+
+.InfoModal p {
+    font-weight: 200;
+    margin: 0;
+}
+
+
+
+.InfoDescripcion {
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+}
+
+/*FORMULARIO DE ENVÍO*/
+.FormContainer form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 60px;
+    gap: 20px;
+}
+
+.FormContainer input {
+    outline:none;
+    border-bottom: var(--rojo) 2px solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.FormContainer input:focus {
+    color: black;
+}
+
+.FormContainer button {
+    margin-top: 30px;
+    background-color: var(--rojo);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: var(--rojo) 2px solid;
+}
+
+.FormContainer button:hover {
+    background-color: white;
+    color: var(--rojo);
+    border: var(--rojo) 2px solid;
+}
+
+/*PROCESO*/
+
+.procesoContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 40px 0px 40px 0px;
+}
+
+.TextRightProcess{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.procesoContainer h1{
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px 0px 40px 0px;
+    margin: 0px 60px 0px 60px;
+    color: var(--verde);
+    font-size: 180px;
+}
+
+.TextRightProcess p{
+    font-size: 20px;
+    margin-top: 40px;
+    text-align: right;
+    padding: 0px 40px 40px 40px;
+}
+
+/*CONTACTO*/
+.FormContainer textarea{
+    outline:none;
+    resize:none;
+    font-family: inherit;
+    padding: 10px;
+    font-size: 30px;
+    color: gray;
+    font-weight: 300;
+    border: var(--rojo) 2px solid;
 }
 
 /*FOOTER*/
@@ -225,11 +529,217 @@ button:disabled {
 .Footer {
     width: 100%;
     height: 500px;
-    background-color: #FF7BAC;
+    background-color: var(--verde);
     margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 100px 0px;
+    color: white;
+    bottom: 0px;
+}
+
+.MenuFooter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.Footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.Footer a:hover {
+    color: var(--rojo);
+}
+
+.Footer h3 {
+    margin: 0;
+    border-bottom: var(--rojo) 2px solid;
+    margin-bottom: 15px;
+}
+
+.InfoFooter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.Footer p {
+    margin: 0;
+}
+
+.SocialFooter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+}
+
+/*LOADER*/
+
+.Loader {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CARRITO */
+.CartContainer {
+    padding-bottom: 200px;
+}
+
+.CartContainer h1 {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px 0px 40px 0px;
+    margin: 0px 60px 0px 60px;
+    border-bottom: var(--rojo) 2px solid;
+    color: var(--verde);
+}
+
+.CartList {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: fit-content;
+    padding: 20px 0px;
+    border-bottom: var(--rojo) 2px solid;
+    margin: 0px 60px 0px 60px;
+}
+
+.CartList img {
+    width: 100%;
+    margin-right: 50px;
+}
+
+.CartItemDetail {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.CartItemDetail h2,
+p {
+    margin: 0;
+}
+
+.CartItemDetail button {
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    border: 0px;
+    width: 60px;
+}
+
+
+.CartItemDetail button img{
+    width: 100%;
+}
+
+.CartQuantityBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15%;
+}
+
+.CartTotal {
+    background-color: var(--rojo);
+    margin: 60px;
+    padding: 30px;
+    flex-direction: column;
+    color: white;
+}
+
+.CartTotal button {
+    width: max-content;
+    background-color: white;
+    color: var(--rojo);
+    border: var(--rojo) 2px solid;
+    padding: 20px;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.CartTotal a {
+    width: max-content;
+    background-color: white;
+    color: var(--rojo);
+    border: var(--rojo) 2px solid;
+    padding: 20px;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.CartTotal button:hover {
+    background-color: var(--rojo);
+    color: white;
+    border: white 2px solid;
+}
+
+.CartTotal a:hover {
+    background-color: var(--rojo);
+    color: white;
+    border: white 2px solid;
+}
+
+
+.EmptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.EmptyCart h1 {
+    margin: 60px;
+}
+
+.EmptyCart a {
+    width: max-content;
+    text-decoration: none;
+    color: var(--rojo);
+    border: var(--rojo) 2px solid;
+    padding: 20px;
+}
+
+.EmptyCart a:hover {
+    color: white;
+    background-color: var(--rojo);
+}
+
+.orderRecap {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.orderRecap a {
+    width: max-content;
+    text-decoration: none;
+    color: var(--rojo);
+    border: var(--rojo) 2px solid;
+    padding: 20px;
+
+}
+
+.orderRecap a:hover {
     color: white;
-    bottom: 0px;
+    background-color: var(--rojo);
 }

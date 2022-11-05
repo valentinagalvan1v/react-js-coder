@@ -1,21 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function NavTienda() {
     return (
-        <div className='NavTienda'>
-            <Link to='/tienda'>
-                TODO
-            </Link>
-            <Link to="/tienda/jugo">
-                JUGOS
-            </Link>
-            <Link to="/tienda/agua">
-                AGUAS
-            </Link>
-            <Link to="/tienda/pack">
-                PACKS
-            </Link>
-        </div>
+        <nav className='NavTienda'>
+            <NavLink to='/tienda' end>TODO</NavLink>
+            <NavLink to="/tienda/jugo">JUGOS</NavLink>
+            <NavLink to="/tienda/agua">AGUAS</NavLink>
+            <NavLink to="/tienda/pack"> PACKS</NavLink>
+        </nav>
     )
 }
