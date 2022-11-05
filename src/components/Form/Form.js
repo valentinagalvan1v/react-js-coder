@@ -21,11 +21,17 @@ export default function Form() {
 
     const clickSubmit = (e) => {
         e.preventDefault();
+
+        if(nombre === '' || apellido === '' || direccion === '' || telefono === '' || mail1 === '' || mail2 === ''){
+            return
+        }
+
         let mail
         if (mail1 === mail2) {
             mail = mail2
         } else {
             alert('Mail no coincide')
+            return
         }
         const order = {
             consumer: { nombre, apellido, direccion, telefono, mail },
